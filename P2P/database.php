@@ -180,14 +180,24 @@ class database
 		{
 			$_SESSION["delete_product"] = "no";
 		}
-		
 	}
 	public function getSession($var)
 	{
 		if(isset($_SESSION[$var]))
 		return $_SESSION[$var];
 	}
-	
+	public function validateProductName($pname)
+	{
+		$query = $this->pdo->prepare("select * from products where lower(name)=?");
+		$query->execute(array(strtolower($pname)));
+		return ($query->rowCount() >= 1)?"false":"true";
+	}
+	public function getProductById($id)
+	{
+		$query = $this->pdo->prepare("select * from products where id=?");
+		$query->execute(array($id));
+		return $query->fetch();
+	}
 }
 $db = new database();
 ?>

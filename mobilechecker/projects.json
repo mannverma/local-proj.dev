@@ -1,0 +1,186 @@
+{
+  "settings": {
+    "currentPage": "index.html"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Mobirise Mobile Website Builder",
+        "meta_descr": "Free Responsive Website Maker. Create awesome mobile-first websites. Easy and fast - No coding!",
+        "header_custom": "<!-- Paste any valid HTML code here. The code will be inserted to the end of <head> section, right before </head> -->",
+        "footer_custom": "<!-- Paste any valid HTML code here. The code will be inserted to the end of <body> section, right before </body> -->"
+      },
+      "components": [
+        {
+          "_name": "footer1",
+          "text": "\n                    <h2>Create Mobile Website</h2><p>Webcente comes with huge collection of pre made layouts that helps to make your development faster.</p>\n                ",
+          "_params": {
+            "bgImageRadio": false,
+            "bgImage": "images/bg.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#444444",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=i4LU2oPqyyk"
+            },
+            "overlay": false,
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5
+          },
+          "_anchor": "footer1-2",
+          "button": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-danger\" href=\"http://mobirise.com\" id=\"note-editor-23\">Select Design</a>",
+          "_styles": {
+            "P": {
+              "font-size": "16px"
+            }
+          }
+        },
+        {
+          "_params": {
+            "logo": true,
+            "brand": "Mobirise",
+            "textColor": "#4c6972",
+            "items": [
+              {
+                "title": "HOME",
+                "href": "http://mobirise.com",
+                "pages": "",
+                "anchor": ""
+              },
+              {
+                "title": "ABOUT",
+                "href": "http://mobirise.com",
+                "pages": "",
+                "anchor": ""
+              },
+              {
+                "title": "CONTACT",
+                "href": "http://mobirise.com",
+                "pages": "",
+                "anchor": ""
+              }
+            ]
+          },
+          "logo": "images/logo.png",
+          "_name": "menu",
+          "_anchor": "menu-1"
+        },
+        {
+          "_params": {
+            "bgImageRadio": true,
+            "bgImage": "images/bg.jpg",
+            "parallax": true,
+            "bgColorRadio": false,
+            "bgColor": "#28324e",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=i4LU2oPqyyk"
+            },
+            "overlay": false,
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5
+          },
+          "text": "\n                        <h1>Simple Website V/S Responsive</h1><p>Create awesome mobile-friendly websites.</p>\n                    ",
+          "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-danger\" href=\"http://mobirise.com\" id=\"note-editor-2\">Contact Us</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-default\" href=\"http://mobirise.com\" id=\"note-editor-3\">About us</a>",
+          "_name": "header1",
+          "_anchor": "header1-0"
+        },
+        {
+          "_params": {
+            "inverse": false,
+            "bgImageRadio": false,
+            "bgImage": "images/bg.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#3C3C3C",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=i4LU2oPqyyk"
+            },
+            "overlay": false,
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5
+          },
+          "text": "<h2>PRE MADE BLOCKS</h2><p>Mobirise comes with huge collection of pre made layouts to help make your development faster.</p>",
+          "button": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-danger\" href=\"http://mobirise.com\">START A JOURNEY</a>",
+          "_name": "msg-box1",
+          "_anchor": "msg-box1-0",
+          "_styles": {
+            "P": {
+              "font-size": "16px"
+            }
+          }
+        },
+        {
+          "_params": {
+            "textAlign": "left",
+            "inverse": false,
+            "bgImageRadio": false,
+            "bgImage": "images/bg.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#f97352",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=i4LU2oPqyyk"
+            },
+            "overlay": false,
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5
+          },
+          "image": "images/iphone.png",
+          "text": "<h2>DRAG AND DROP WEBSITE BUILDER</h2><p>Make your own website in a few clicks! Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface.</p>",
+          "button": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-default\" href=\"http://mobirise.com\">LEARN MORE</a>",
+          "_name": "msg-box4",
+          "_anchor": "msg-box4-0"
+        },
+        {
+          "_params": {
+            "bgImageRadio": false,
+            "bgImage": "images/bg.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=i4LU2oPqyyk"
+            },
+            "overlay": false,
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5
+          },
+          "text": "<h2>MODERN STYLES</h2><p>Mobirise has provided for website developers a growing library of modern blocks which can be used either partially or in full for every website developed through the builder.</p>",
+          "button": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-default\" href=\"http://mobirise.com\">SEE ALL TEMPLATES</a>",
+          "_name": "msg-box3",
+          "_anchor": "msg-box3-1"
+        },
+        {
+          "_params": {
+            "inverse": false,
+            "bgImageRadio": false,
+            "bgImage": "images/bg.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=i4LU2oPqyyk"
+            },
+            "overlay": false,
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5,
+            "counters": true,
+            "facebook": true,
+            "twitter": true,
+            "google": true
+          },
+          "text": "<h2>IF YOU LIKE Webcente, PLEASE SHARE IT!</h2>",
+          "_name": "social-buttons1",
+          "_anchor": "social-buttons1-0"
+        }
+      ]
+    }
+  }
+}

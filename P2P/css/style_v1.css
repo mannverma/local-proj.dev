@@ -2246,4 +2246,7 @@ border-radius: 50%;}
   #dashboard_links .nav-pills > li.active > a:before {
     display: none;
   }
+  .hidemob{
+	  display:none !important;
+  }
 }

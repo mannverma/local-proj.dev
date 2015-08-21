@@ -104,9 +104,10 @@
                     <input type="hidden" name="img" value="<?php echo $img; ?>">
                     
 					<div class="form-group">
-						<label class="col-sm-2 control-label">Product Name</label>
+						<label class="col-sm-2 control-label">Product Name*</label>
 						<div class="col-sm-4">
-							<input type="text" name="name" value="<?php echo $name; ?>" class="form-control" placeholder="Product Name" data-toggle="tooltip" title="Enter Product Name">
+							<input type="text" name="name" value="<?php echo $name; ?>" class="form-control" placeholder="Product Name" data-toggle="tooltip" title="Enter Product Name"><br/>
+                            <span id="nm_msg" style="color:#EF292D;"></span>
 						</div>
 					</div>
 					
@@ -119,7 +120,7 @@
 					</div>
 					
 					<div class="form-group">
-						<label class="col-sm-2 control-label">Product Price</label>
+						<label class="col-sm-2 control-label">Product Price*</label>
 						
 						<div class="col-sm-2">
 							<div class="input-group">
@@ -130,7 +131,7 @@
 						</div>
 					</div>
                     <div class="form-group">
-						<label class="col-sm-2 control-label">Product Image</label>
+						<label class="col-sm-2 control-label">Product Image*</label>
                         <?php
                         if($img != "")
 						{
@@ -190,7 +191,7 @@
                         <table class="table table-bordered table-striped table-hover table-heading table-datatable" id="datatable-1">
                             <thead>
                                 <tr>
-                                    <th>Sr No.</th>
+                                    <th class="hidemob">Sr No.</th>
                                     <th>Product Name</th>
                                     <th>Price</th>
                                     <th>Image</th>
@@ -206,12 +207,12 @@
 							{
 							?>
                                 <tr>
-                                    <td><?php echo $row['id'];?></td>
+                                    <td class="hidemob"><?php echo $row['id'];?></td>
                                     
                                     <td><?php echo $row['name'];?></td>
                                     <td><?php echo $row['price'];?></td>
                                     <td><a class="fancybox" rel="gallery1" href="product_img/<?php echo $row['img']; ?>" title="<?php echo $row['name'];?>"><img class="img-rounded" src="product_img/m/<?php echo $row['img']; ?>"></a></td>
-                                    <td><a class="fancybox" rel="gallery1" href="product_img/QR/<?php echo $row['qr_img']; ?>" title="<?php echo $row['name'];?>"><img class="img-rounded" src="product_img/QR/<?php echo $row['qr_img']; ?>"></a></td>
+                                    <td><a class="fancybox" rel="gallery1" href="product_img/QR/<?php echo $row['qr_img']; ?>" title="<?php echo $row['name'];?>"><img class="img-rounded" src="product_img/QR/<?php echo $row['qr_img']; ?>"></a> <a class="fancybox ajx" data-fancybox-type="ajax" href="QR_email_input.php?qr=<?php echo base64_encode($row['qr_img']);?>">Send in Mail</a></td>
                                     
                                     <td><a href="edit-product.php?id=<?php echo $row['id']; ?>" title="Edit Product"><i class="fa fa-edit"></i></a> | <a href="delete-product.php?id=<?php echo $row['id']; ?>" title="Delete Product"><i class="fa fa-trash-o"></i></a></td>
                                 </tr>
@@ -222,7 +223,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Sr No.</th>
+                                    <th class="hidemob">Sr No.</th>
                                     <th>Product Name</th>
                                     <th>Price</th>
                                     <th>Image</th>
@@ -238,32 +239,51 @@
 
 
 <script type="text/javascript">
+window.myvar = "";
 function valid(frm)
 {
+	myvar = "";
+	var parts = frm.action.split("/");
+	var pg = parts[parts.length-1];
 	if(frm.name.value.trim() == "")
 	{
-		alert("All fields are mendatory");
+		alert("Field is mendatory");
 		frm.name.focus();
-		return false;
-	}
-	if(frm.speci.value.trim() == "")
-	{
-		alert("All fields are mendatory");
 		return false;
 	}
 	if(frm.price.value.trim() == "")
 	{
-		alert("All fields are mendatory");
+		alert("Field is mendatory");
 		frm.price.focus();
 		return false;
 	}
-	if(frm.uploadphoto.value.trim() == "")
+	if(frm.uploadphoto.value.trim() == "" && pg.trim() == "save-product.php")
 	{
-		alert("All fields are mendatory");
+		alert("Field is mendatory");
 		frm.uploadphoto.focus();
 		return false;
 	}
-	return true;
+	$.ajax({
+		type:"POST",
+		url:"validate-product-name.php",
+		data:"pname="+frm.name.value.trim(),
+		async:false,
+		success: function(res){
+			if(res == "false")
+			{
+				$("#nm_msg").html("Product with the same name already exists.<br> Try with a different name.");
+				myvar="true";
+			}
+		}
+	});
+	if(myvar == "true")
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
 }
 function AllTables(){
 	TestTable1();
@@ -293,8 +313,12 @@ function DemoGallery(){
 		openEffect	: 'none',
 		closeEffect	: 'none'
 	});
+	 $('a.ajx').fancybox({
+            type: "ajax"
+        });
 }
 $(document).ready(function() {
+	
 	// Create Wysiwig editor for textare
 	TinyMCEStart('#wysiwig_simple', null);
 	TinyMCEStart('#wysiwig_full', 'extreme');
